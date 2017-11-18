@@ -5,7 +5,7 @@
         <li class="logo">Router</li>
         <el-submenu index="basic">
           <template slot="title">基础</template>
-          <el-menu-item index="basic-install">开始</el-menu-item>
+          <el-menu-item index="basic-matching">动态路由匹配</el-menu-item>
           <el-menu-item index="basic-install">开始</el-menu-item>
           <el-menu-item index="basic-install">开始</el-menu-item>
           <el-menu-item index="basic-install">开始</el-menu-item>
@@ -41,6 +41,11 @@ export default {
   methods: {
     handleSelect(key, keyPath) {
       console.log(key, keyPath)
+      switch (key) {
+        case 'basic-matching':
+          this.$router.push('/matching/111')
+          break
+      }
     }
   }
 }
