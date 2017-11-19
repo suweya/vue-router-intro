@@ -23,6 +23,14 @@ export default {
   beforeRouteUpdate(to, from, next) {
     console.log('before route update to from ', to, from)
     next()
+  },
+  beforeRouteEnter(to, from, next) {
+    console.log('before route enter')
+    next()
+  },
+  beforeRouteLeave(to, from, next) {
+    console.log('before route leave')
+    next()
   }
 }
 </script>

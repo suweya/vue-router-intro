@@ -26,12 +26,24 @@ export default new Router({
     {
       name: 'Matching',
       path: '/matching/:id',
-      component: Matching
+      component: Matching,
+      meta: {
+        requiresAuth: true
+      },
+      beforeEnter: (to, from, next) => {
+        console.log('befroeEnter ', to.params.id)
+        if (to.params.id === '111') {
+          next()
+        } else {
+          next(new Error())
+        }
+      }
     },
     {
       name: 'MultiParams',
       path: '/post/:post_id/comment/:comment_id',
-      component: MultiParams
+      component: MultiParams,
+      props: true
     },
     {
       path: '/nested/:uname',
@@ -59,6 +71,7 @@ export default new Router({
     {
       path: '/views',
       component: Views,
+      alias: '/vv',
       children: [
         {
           path: '',
@@ -69,6 +82,10 @@ export default new Router({
           }
         }
       ]
+    },
+    {
+      path: '/v',
+      redirect: '/views'
     }
   ]
 })
