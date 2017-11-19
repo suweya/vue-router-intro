@@ -5,6 +5,11 @@ import HelloWorld from '@/components/HelloWorld'
 const Matching = () => import('@/components/Matching/index.vue')
 const MultiParams = () => import('@/components/Matching/MultiParams.vue')
 
+const Nested = () => import('@/components/Nested/index.vue')
+const UserProfile = () => import('@/components/Nested/UserProfile.vue')
+const UserPosts = () => import('@/components/Nested/UserPosts.vue')
+const NestedIndex = () => import('@/components/Nested/Default.vue')
+
 Vue.use(Router)
 
 export default new Router({
@@ -23,6 +28,25 @@ export default new Router({
       name: 'MultiParams',
       path: '/post/:post_id/comment/:comment_id',
       component: MultiParams
+    },
+    {
+      name: 'Nested',
+      path: '/nested/:uname',
+      component: Nested,
+      children: [
+        {
+          path: '',
+          component: NestedIndex
+        },
+        {
+          path: 'profile',
+          component: UserProfile
+        },
+        {
+          path: 'posts',
+          component: UserPosts
+        }
+      ]
     }
   ]
 })
