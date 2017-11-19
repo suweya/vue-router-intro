@@ -17,7 +17,7 @@
           <el-menu-item index="2-1">导航守卫</el-menu-item>
           <el-menu-item index="2-2">路由元信息</el-menu-item>
           <el-menu-item index="2-3">过度动效</el-menu-item>
-          <el-menu-item index="2-3">数据获取</el-menu-item>
+          <el-menu-item index="data-fetching">数据获取</el-menu-item>
           <el-menu-item index="2-3">滚动行为</el-menu-item>
           <el-menu-item index="2-3">懒加载</el-menu-item>
         </el-submenu>
@@ -36,52 +36,58 @@
 </template>
 
 <script>
-  export default {
-    name: 'app',
-    data() {
-      return {
-        activeIndex: 'basic-install'
-      }
-    },
-    methods: {
-      handleSelect(key, keyPath) {
-        console.log(key, keyPath)
-        switch (key) {
-          case 'basic-matching':
-            this.$router.push('/matching/111')
-            break
-          case 'basic-nested':
-            this.$router.push('/nested/suweya')
-            break
-          case 'basic-named':
-            this.$router.push({
-              name: 'named',
-              params: { id: 123 }
-            })
-            break
-        }
+export default {
+  name: 'app',
+  data() {
+    return {
+      activeIndex: 'basic-install'
+    }
+  },
+  methods: {
+    handleSelect(key, keyPath) {
+      console.log(key, keyPath)
+      switch (key) {
+        case 'basic-matching':
+          this.$router.push('/matching/111')
+          break
+        case 'basic-nested':
+          this.$router.push('/nested/suweya')
+          break
+        case 'basic-named':
+          this.$router.push({
+            name: 'named',
+            params: { id: 123 }
+          })
+          break
+        case 'data-fetching':
+          this.$router.push({
+            name: 'Fetching',
+            params: { id: 1 }
+          })
+          break
       }
     }
   }
+}
 </script>
 
 <style scoped>
-  .logo {
-    float: left;
-    height: 60px;
-    line-height: 60px;
-    padding: 0 20px;
-  }
+.logo {
+  float: left;
+  height: 60px;
+  line-height: 60px;
+  padding: 0 20px;
+}
 
-  .logo:focus {
-    outline: none;
-  }
+.logo:focus {
+  outline: none;
+}
 
-  .app-header {
-    padding: 0;
-  }
+.app-header {
+  padding: 0;
+}
 
-  .app-menu {
-    padding: 0 20px;
-  }
+.app-menu {
+  padding: 0 20px;
+}
 </style>

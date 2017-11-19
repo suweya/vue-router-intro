@@ -5,14 +5,18 @@ import HelloWorld from '@/components/HelloWorld'
 const Matching = () => import('@/components/Matching/index.vue')
 const MultiParams = () => import('@/components/Matching/MultiParams.vue')
 
-const Nested = () => import('@/components/Nested/index.vue')
-const UserProfile = () => import('@/components/Nested/UserProfile.vue')
-const UserPosts = () => import('@/components/Nested/UserPosts.vue')
-const NestedIndex = () => import('@/components/Nested/Default.vue')
+const Nested = () => import(/* webpackChunkName: "group-nested" */ '@/components/Nested/index.vue')
+const UserProfile = () => import(/* webpackChunkName: "group-nested" */ '@/components/Nested/UserProfile.vue')
+const UserPosts = () => import(/* webpackChunkName: "group-nested" */ '@/components/Nested/UserPosts.vue')
+const NestedIndex = () => import(/* webpackChunkName: "group-nested" */ '@/components/Nested/Default.vue')
 
 const Named = () => import('@/components/Named/index.vue')
 
 const Views = () => import('@/components/Views/index.vue')
+
+const Fetching = () => import('@/components/Fetching/index.vue')
+
+const FetchingData = () => import('@/components/Fetching/Data.vue')
 
 Vue.use(Router)
 
@@ -86,6 +90,16 @@ export default new Router({
     {
       path: '/v',
       redirect: '/views'
+    },
+    {
+      name: 'Fetching',
+      path: '/fetching/:id',
+      component: Fetching
+    },
+    {
+      name: 'FetchingData',
+      path: '/data/:id',
+      component: FetchingData
     }
   ]
 })
