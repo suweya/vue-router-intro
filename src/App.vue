@@ -7,7 +7,7 @@
           <template slot="title">基础</template>
           <el-menu-item index="basic-matching">动态路由匹配</el-menu-item>
           <el-menu-item index="basic-nested">嵌套路由</el-menu-item>
-          <el-menu-item index="basic-install">开始</el-menu-item>
+          <el-menu-item index="basic-named">命名路由</el-menu-item>
           <el-menu-item index="basic-install">开始</el-menu-item>
           <el-menu-item index="basic-install">开始</el-menu-item>
           <el-menu-item index="basic-install">开始</el-menu-item>
@@ -47,6 +47,12 @@ export default {
           break
         case 'basic-nested':
           this.$router.push('/nested/suweya')
+          break
+        case 'basic-named':
+          this.$router.push({
+            name: 'named',
+            params: { id: 123 }
+          })
           break
       }
     }

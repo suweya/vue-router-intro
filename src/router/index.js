@@ -10,6 +10,8 @@ const UserProfile = () => import('@/components/Nested/UserProfile.vue')
 const UserPosts = () => import('@/components/Nested/UserPosts.vue')
 const NestedIndex = () => import('@/components/Nested/Default.vue')
 
+const Named = () => import('@/components/Named/index.vue')
+
 Vue.use(Router)
 
 export default new Router({
@@ -30,7 +32,6 @@ export default new Router({
       component: MultiParams
     },
     {
-      name: 'Nested',
       path: '/nested/:uname',
       component: Nested,
       children: [
@@ -47,6 +48,11 @@ export default new Router({
           component: UserPosts
         }
       ]
+    },
+    {
+      path: '/named/:id',
+      name: 'named',
+      component: Named
     }
   ]
 })
