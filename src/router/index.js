@@ -12,6 +12,8 @@ const NestedIndex = () => import('@/components/Nested/Default.vue')
 
 const Named = () => import('@/components/Named/index.vue')
 
+const Views = () => import('@/components/Views/index.vue')
+
 Vue.use(Router)
 
 export default new Router({
@@ -53,6 +55,20 @@ export default new Router({
       path: '/named/:id',
       name: 'named',
       component: Named
+    },
+    {
+      path: '/views',
+      component: Views,
+      children: [
+        {
+          path: '',
+          components: {
+            default: NestedIndex,
+            a: UserPosts,
+            b: UserProfile
+          }
+        }
+      ]
     }
   ]
 })
