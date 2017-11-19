@@ -1,0 +1,2 @@
+webpackJsonp([2],{ah5q:function(e,n,t){"use strict";Object.defineProperty(n,"__esModule",{value:!0});var r=function(){var e=this,n=e.$createElement,t=e._self._c||n;return t("div",[t("h1",[e._v("命名路由")]),e._v("\n  通过此方式访问\n  "),t("router-link",{attrs:{to:{name:"named",params:{id:789}}}},[e._v("User")])],1)},l=[],a={render:r,staticRenderFns:l},s=a,u=t("VU/8"),i=u(null,s,!1,null,null,null);n.default=i.exports}});
+//# sourceMappingURL=2.0ed0fa2f90c9b75ae9fb.js.map
