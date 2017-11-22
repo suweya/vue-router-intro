@@ -11,7 +11,8 @@
     "test": "npm run unit",
     "lint": "eslint --ext .js,.vue src test/unit/specs",
     "build": "node build/build.js",
-    "release": "npm run build && rm -rf docs && mv dist docs && cp CNAME docs && git add * && git commit -m 'build' && git push"
+    "release": "npm run build && rm -rf docs && mv dist docs && cp CNAME docs",
+    "push": "git add * && git commit -m 'build' && git push"
   },
   "dependencies": {
     "element-ui": "^2.0.5",
