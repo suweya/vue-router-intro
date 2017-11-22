@@ -17,6 +17,11 @@ const Views = () => import('@/components/Router/Views/index.vue')
 const Fetching = () => import('@/components/Router/Fetching/index.vue')
 const FetchingData = () => import('@/components/Router/Fetching/Data.vue')
 
+/**
+ * Video
+ */
+const Video = () => import('@/components/Video/index.vue')
+
 Vue.use(Router)
 
 export default new Router({
@@ -106,6 +111,10 @@ export default new Router({
           component: FetchingData
         }
       ]
+    },
+    {
+      path: '/video',
+      component: Video
     }
   ]
 })

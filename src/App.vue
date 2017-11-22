@@ -30,6 +30,9 @@ export default {
         case 'router':
           this.$router.push('/router')
           break
+        case 'video':
+          this.$router.push('/video')
+          break
       }
     }
   }
