@@ -28,7 +28,7 @@ export default {
         this.leftType = 'primary'
       }
       const uname = this.$route.params.uname
-      this.$router.push(`/nested/${uname}/${tag}`, function() {
+      this.$router.push(`/router/nested/${uname}/${tag}`, function() {
         console.log('route push onComplete')
       }, function() {
         console.log('route push onAbort')

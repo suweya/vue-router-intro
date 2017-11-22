@@ -2,29 +2,9 @@
   <el-container>
     <el-header class="app-header">
       <el-menu :default-active="activeIndex" class="app-menu" mode="horizontal" @select="handleSelect" active-text-color="#409EFF">
-        <li class="logo">Router</li>
-        <el-submenu index="basic">
-          <template slot="title">基础</template>
-          <el-menu-item index="basic-matching">动态路由匹配</el-menu-item>
-          <el-menu-item index="basic-nested">嵌套路由</el-menu-item>
-          <el-menu-item index="basic-named">命名路由</el-menu-item>
-          <el-menu-item index="basic-1">重定向和别名</el-menu-item>
-          <el-menu-item index="basic-2">向路由组件传递props</el-menu-item>
-          <el-menu-item index="basic-3">HTML5 History模式</el-menu-item>
-        </el-submenu>
-        <el-submenu index="advance">
-          <template slot="title">进阶</template>
-          <el-menu-item index="2-1">导航守卫</el-menu-item>
-          <el-menu-item index="2-2">路由元信息</el-menu-item>
-          <el-menu-item index="2-3">过度动效</el-menu-item>
-          <el-menu-item index="data-fetching">数据获取</el-menu-item>
-          <el-menu-item index="2-3">滚动行为</el-menu-item>
-          <el-menu-item index="2-3">懒加载</el-menu-item>
-        </el-submenu>
-        <el-submenu index="api">
-          <template slot="title">API文档</template>
-          <el-menu-item index="3-1">选项1</el-menu-item>
-        </el-submenu>
+        <li class="logo">Sample</li>
+        <el-menu-item index="router">Router</el-menu-item>
+        <el-menu-item index="video">Video</el-menu-item>
       </el-menu>
     </el-header>
     <el-main>
@@ -47,23 +27,8 @@ export default {
     handleSelect(key, keyPath) {
       console.log(key, keyPath)
       switch (key) {
-        case 'basic-matching':
-          this.$router.push('/matching/111')
-          break
-        case 'basic-nested':
-          this.$router.push('/nested/suweya')
-          break
-        case 'basic-named':
-          this.$router.push({
-            name: 'named',
-            params: { id: 123 }
-          })
-          break
-        case 'data-fetching':
-          this.$router.push({
-            name: 'Fetching',
-            params: { id: 1 }
-          })
+        case 'router':
+          this.$router.push('/router')
           break
       }
     }

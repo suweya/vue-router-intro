@@ -5,10 +5,10 @@
     <p>$route.params.id = {{ $route.params.id }}</p>
     <hr>
     <h2>更多模式</h2>
-    <router-link to="/post/123/comment/456">$route.params</router-link>
-    <router-link to="/post/098/comment/789?vname=suweya">$route.query</router-link>
+    <router-link to="/router/post/123/comment/456">$route.params</router-link>
+    <router-link to="/router/post/098/comment/789?vname=suweya">$route.query</router-link>
     <h2>响应路由的变化</h2>
-    <router-link to="/matching/XXX">复用组件引起的路由变化</router-link>
+    <router-link to="/router/matching/XXX">复用组件引起的路由变化</router-link>
   </div>
 </template>
 
