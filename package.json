@@ -10,7 +10,8 @@
     "unit": "jest test/unit/specs --coverage",
     "test": "npm run unit",
     "lint": "eslint --ext .js,.vue src test/unit/specs",
-    "build": "node build/build.js"
+    "build": "node build/build.js",
+    "release": "npm run build && rm -rf docs && mv dist docs"
   },
   "dependencies": {
     "element-ui": "^2.0.5",
