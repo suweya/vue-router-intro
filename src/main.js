@@ -6,6 +6,7 @@ import 'element-ui/lib/theme-chalk/index.css'
 import 'normalize.css/normalize.css'
 import VueVideoPlayer from 'vue-video-player'
 
+require('es6-promise/auto')
 require('video.js/dist/video-js.css')
 require('vue-video-player/src/custom-theme.css')
 
